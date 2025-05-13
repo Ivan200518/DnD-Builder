@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#6D4C41">
+
+
+        <!-- Заголовок -->
+        <TextView
+            android:id="@+id/raceTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Race: select 1"
+            android:textSize="18sp"
+            android:textColor="#C8E6C9"
+            android:layout_centerHorizontal="true" />
+
+        <!-- Grid из 8 кнопок -->
+        <GridLayout
+            android:id="@+id/raceGrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/raceTitle"
+            android:layout_marginTop="16dp"
+            android:columnCount="2"
+            android:rowCount="4"
+            android:alignmentMode="alignMargins"
+            android:useDefaultMargins="true">
+
+            <Button android:id="@+id/btnDragonborn" android:text="Dragonborn" style="@style/CharacterButton"
+                android:textAllCaps="false"
+                />
+            <Button android:id="@+id/btnHalfOrc" android:text="Half-Orc" style="@style/CharacterButton"
+                android:textAllCaps="false"
+                />
+            <Button android:id="@+id/btnDwarf" android:text="Dwarf" style="@style/CharacterButton"
+                android:textAllCaps="false"
+                />
+            <Button android:id="@+id/btnHalfling" android:text="Halfling" style="@style/CharacterButton"
+                android:textAllCaps="false"
+                />
+            <Button android:id="@+id/btnElf" android:text="Elf" style="@style/CharacterButton"
+                android:textAllCaps="false"
+                />
+            <Button android:id="@+id/btnHuman" android:text="Human" style="@style/CharacterButton"
+                android:textAllCaps="false"
+                />
+            <Button android:id="@+id/btnGnome" android:text="Gnome" style="@style/CharacterButton"
+                android:textAllCaps="false"
+                />
+            <Button android:id="@+id/btnTiefling" android:text="Tiefling" style="@style/CharacterButton"
+                android:textAllCaps="false"
+                />
+
+        </GridLayout>
+
+
+        <!-- Центрированная 9-я кнопка -->
+
+
+
+
+
+</RelativeLayout>

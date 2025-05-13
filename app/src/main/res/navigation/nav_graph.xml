@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/fragmentLogin"
+    android:id="@+id/nav_graph">
+
+    <fragment android:id="@+id/fragmentLogin"
+        android:name="com.example.dndbuilder.FragmentLogin"
+        tools:layout="@layout/fragment_login">
+
+        <action android:id="@+id/actionLogToReg"
+            app:destination="@+id/fragmentSignUp"/>
+        <action
+            android:id="@+id/actionLogToMain"
+            app:destination="@+id/fragmentMain" />
+    </fragment>
+
+    <fragment android:id="@+id/fragmentLoginSuccess"
+        android:name="com.example.dndbuilder.FragmentLoginSuccess"
+        tools:layout="@layout/fragment_login_success">
+
+        <action
+            android:id="@+id/actionRegSecToMain"
+            app:destination="@+id/fragmentMain" />
+    </fragment>
+
+    <fragment android:id = "@+id/fragmentSignUp"
+        android:name="com.example.dndbuilder.FragmentSignUp"
+        tools:layout="@layout/fragment_sign_up">
+        <action android:id="@+id/actionRegToLog"
+            app:destination="@+id/fragmentLogin"
+            />
+        <action
+            android:id="@+id/actionRegToSuccessReg"
+            app:destination="@id/fragmentLoginSuccess" />
+    </fragment>
+
+    <fragment android:id="@+id/fragmentMain"
+        android:name="com.example.dndbuilder.FragmentMain"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/actionMainToCharacter"
+            app:destination="@id/fragmentCharacter" />
+    </fragment>
+
+    <fragment android:id="@+id/fragmentCharacter"
+        android:name="com.example.dndbuilder.FragmentCharacteristics"
+        tools:layout="@layout/fragment_characterictics">
+    </fragment>
+
+</navigation>

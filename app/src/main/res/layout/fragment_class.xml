@@ -1,0 +1,52 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#6D4C41">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Class/Level: select as 1"
+        android:textStyle="bold"
+        android:textColor="#C8E6C9"
+        android:layout_marginStart="75dp"
+        android:textSize="22sp"
+        android:layout_marginBottom="16dp" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="4"
+        android:alignmentMode="alignMargins"
+        android:columnOrderPreserved="false"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="16dp">
+
+        <Button android:text="Barbarian" style="@style/CharacterButton" />
+
+        <Button
+            style="@style/CharacterButton"
+            android:text="Bard" />
+
+        <Button android:text="Cleric" style="@style/CharacterButton"
+            android:background="@drawable/rounded_char_button"/>
+        <Button android:text="Druid" style="@style/CharacterButton"
+            android:background="@drawable/rounded_char_button"/>
+        <Button android:text="Fighter" style="@style/CharacterButton"
+            android:background="@drawable/rounded_char_button"/>
+        <Button android:text="Monk" style="@style/CharacterButton"
+            android:background="@drawable/rounded_char_button"/>
+        <Button android:text="Paladin" style="@style/CharacterButton"
+            android:background="@drawable/rounded_char_button"/>
+        <Button android:text="Rogue" style="@style/CharacterButton"
+            android:background="@drawable/rounded_char_button"/>
+
+    </GridLayout>
+    <Button android:text="Rogue" style="@style/CharacterButton"
+        android:layout_marginStart="110dp"
+        android:background="@drawable/rounded_char_button"/>
+
+</LinearLayout>
