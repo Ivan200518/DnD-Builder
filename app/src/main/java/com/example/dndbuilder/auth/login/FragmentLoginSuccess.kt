@@ -1,11 +1,11 @@
-package com.example.dndbuilder
+package com.example.dndbuilder.auth.login
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.dndbuilder.R
 import com.example.dndbuilder.databinding.FragmentLoginSuccessBinding
-import com.example.dndbuilder.databinding.FragmentSignUpBinding
 
 class FragmentLoginSuccess :Fragment(R.layout.fragment_login_success){
     private var binding : FragmentLoginSuccessBinding? = null

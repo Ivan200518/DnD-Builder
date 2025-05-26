@@ -43,8 +43,11 @@ android {
 }
 val room_version = "2.7.1"
 dependencies {
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("androidx.navigation:navigation-fragment-ktx:2.8.9")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("androidx.core:core-splashscreen:1.0.1")
+
     implementation(libs.androidx.core.ktx)
     implementation("androidx.room:room-runtime:$room_version")
     implementation("androidx.room:room-ktx:$room_version")

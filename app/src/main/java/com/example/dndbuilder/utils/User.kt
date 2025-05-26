@@ -1,4 +1,4 @@
-package com.example.dndbuilder
+package com.example.dndbuilder.utils
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

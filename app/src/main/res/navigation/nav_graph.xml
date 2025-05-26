@@ -6,7 +6,7 @@
     android:id="@+id/nav_graph">
 
     <fragment android:id="@+id/fragmentLogin"
-        android:name="com.example.dndbuilder.FragmentLogin"
+        android:name="com.example.dndbuilder.auth.login.FragmentLogin"
         tools:layout="@layout/fragment_login">
 
         <action android:id="@+id/actionLogToReg"
@@ -17,7 +17,7 @@
     </fragment>
 
     <fragment android:id="@+id/fragmentLoginSuccess"
-        android:name="com.example.dndbuilder.FragmentLoginSuccess"
+        android:name="com.example.dndbuilder.auth.login.FragmentLoginSuccess"
         tools:layout="@layout/fragment_login_success">
 
         <action
@@ -26,7 +26,7 @@
     </fragment>
 
     <fragment android:id = "@+id/fragmentSignUp"
-        android:name="com.example.dndbuilder.FragmentSignUp"
+        android:name="com.example.dndbuilder.auth.signup.FragmentSignUp"
         tools:layout="@layout/fragment_sign_up">
         <action android:id="@+id/actionRegToLog"
             app:destination="@+id/fragmentLogin"
@@ -37,7 +37,7 @@
     </fragment>
 
     <fragment android:id="@+id/fragmentMain"
-        android:name="com.example.dndbuilder.FragmentMain"
+        android:name="com.example.dndbuilder.fragments.FragmentMain"
         tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/actionMainToCharacter"
@@ -45,7 +45,7 @@
     </fragment>
 
     <fragment android:id="@+id/fragmentCharacter"
-        android:name="com.example.dndbuilder.FragmentCharacteristics"
+        android:name="com.example.dndbuilder.fragments.FragmentCharacteristics"
         tools:layout="@layout/fragment_characterictics">
     </fragment>
 

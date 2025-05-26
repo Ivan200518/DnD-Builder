@@ -1,4 +1,4 @@
-package com.example.dndbuilder
+package com.example.dndbuilder.utils
 
 import android.content.Context
 import androidx.room.Database

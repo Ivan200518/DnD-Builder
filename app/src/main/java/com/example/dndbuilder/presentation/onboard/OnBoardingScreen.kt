@@ -56,6 +56,7 @@ fun OnBoardingScreen(onFinished: () -> Unit) {
     }
     val insets = WindowInsets.systemBars.asPaddingValues()
 
+
     Scaffold(modifier = Modifier.padding(insets),
         containerColor = colorResource(R.color.maroun),
         bottomBar ={ Row (modifier = Modifier.fillMaxWidth().padding(10.dp),

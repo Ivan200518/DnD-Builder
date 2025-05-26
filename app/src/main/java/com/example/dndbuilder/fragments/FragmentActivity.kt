@@ -1,12 +1,11 @@
-package com.example.dndbuilder
+package com.example.dndbuilder.fragments
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.room.Room
-import androidx.room.RoomDatabase
+import com.example.dndbuilder.R
+import com.example.dndbuilder.utils.AppDatabase
 
 class FragmentActivity : AppCompatActivity() {
     lateinit var db : AppDatabase

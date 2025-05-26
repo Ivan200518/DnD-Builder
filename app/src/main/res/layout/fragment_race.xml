@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:background="#6D4C41">
+    android:background="#6D4C41"
+    android:padding="16dp">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
 
-        <!-- Заголовок -->
         <TextView
             android:id="@+id/raceTitle"
             android:layout_width="wrap_content"
@@ -15,52 +18,38 @@
             android:text="Race: select 1"
             android:textSize="18sp"
             android:textColor="#C8E6C9"
-            android:layout_centerHorizontal="true" />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp" />
 
-        <!-- Grid из 8 кнопок -->
         <GridLayout
             android:id="@+id/raceGrid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/raceTitle"
-            android:layout_marginTop="16dp"
             android:columnCount="2"
-            android:rowCount="4"
+            android:rowCount="5"
             android:alignmentMode="alignMargins"
-            android:useDefaultMargins="true">
+            android:columnOrderPreserved="false">
 
+            <Button android:id="@+id/btnAasimar" android:text="Aasimar" style="@style/CharacterButton"
+                android:textAllCaps="false"/>
             <Button android:id="@+id/btnDragonborn" android:text="Dragonborn" style="@style/CharacterButton"
-                android:textAllCaps="false"
-                />
-            <Button android:id="@+id/btnHalfOrc" android:text="Half-Orc" style="@style/CharacterButton"
-                android:textAllCaps="false"
-                />
+                android:textAllCaps="false"/>
             <Button android:id="@+id/btnDwarf" android:text="Dwarf" style="@style/CharacterButton"
-                android:textAllCaps="false"
-                />
-            <Button android:id="@+id/btnHalfling" android:text="Halfling" style="@style/CharacterButton"
-                android:textAllCaps="false"
-                />
+                android:textAllCaps="false"/>
             <Button android:id="@+id/btnElf" android:text="Elf" style="@style/CharacterButton"
-                android:textAllCaps="false"
-                />
-            <Button android:id="@+id/btnHuman" android:text="Human" style="@style/CharacterButton"
-                android:textAllCaps="false"
-                />
+                android:textAllCaps="false"/>
             <Button android:id="@+id/btnGnome" android:text="Gnome" style="@style/CharacterButton"
-                android:textAllCaps="false"
-                />
+                android:textAllCaps="false"/>
+            <Button android:id="@+id/btnGoliath" android:text="Goliath" style="@style/CharacterButton"
+                android:textAllCaps="false"/>
+            <Button android:id="@+id/btnHalfling" android:text="Halfling" style="@style/CharacterButton"
+                android:textAllCaps="false"/>
+            <Button android:id="@+id/btnHuman" android:text="Human" style="@style/CharacterButton"
+                android:textAllCaps="false"/>
+            <Button android:id="@+id/btnOrc" android:text="Orc" style="@style/CharacterButton"
+                android:textAllCaps="false"/>
             <Button android:id="@+id/btnTiefling" android:text="Tiefling" style="@style/CharacterButton"
-                android:textAllCaps="false"
-                />
-
+                android:textAllCaps="false"/>
         </GridLayout>
-
-
-        <!-- Центрированная 9-я кнопка -->
-
-
-
-
-
-</RelativeLayout>
+    </LinearLayout>
+</ScrollView>

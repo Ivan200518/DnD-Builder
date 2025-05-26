@@ -1,52 +1,104 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:background="#6D4C41">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Class/Level: select as 1"
-        android:textStyle="bold"
-        android:textColor="#C8E6C9"
-        android:layout_marginStart="75dp"
-        android:textSize="22sp"
-        android:layout_marginBottom="16dp" />
-
-    <GridLayout
+    android:background="#6D4C41"
+    android:padding="12dp">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:columnCount="2"
-        android:rowCount="4"
-        android:alignmentMode="alignMargins"
-        android:columnOrderPreserved="false"
-        android:layout_marginStart="15dp"
-        android:layout_marginBottom="16dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="#6D4C41">
 
-        <Button android:text="Barbarian" style="@style/CharacterButton" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Class/Level: select as 1"
+            android:textStyle="bold"
+            android:textColor="#C8E6C9"
+            android:layout_gravity="center_horizontal"
+            android:textSize="22sp"
+            android:layout_marginBottom="16dp" />
+
+        <GridLayout
+            android:layout_width="411dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:alignmentMode="alignMargins"
+            android:columnCount="2"
+            android:columnOrderPreserved="false"
+            android:rowCount="6">
+
+            <Button
+                android:id="@+id/btnBarbarian"
+                style="@style/CharacterButton"
+                android:background="@drawable/rounded_char_button"
+                android:text="Barbarian" />
+
+            <Button
+                android:id="@+id/btnBard"
+                style="@style/CharacterButton"
+                android:background="@drawable/rounded_char_button"
+                android:text="Bard" />
+
+            <Button
+                android:id="@+id/btnCleric"
+                style="@style/CharacterButton"
+                android:background="@drawable/rounded_char_button"
+                android:text="Cleric" />
+
+            <Button
+                android:id="@+id/btnDruid"
+                style="@style/CharacterButton"
+                android:background="@drawable/rounded_char_button"
+                android:text="Druid" />
+
+            <Button
+                android:id="@+id/btnFighter"
+                style="@style/CharacterButton"
+                android:background="@drawable/rounded_char_button"
+                android:text="Fighter" />
+
+            <Button
+                android:id="@+id/btnMonk"
+                style="@style/CharacterButton"
+                android:background="@drawable/rounded_char_button"
+                android:text="Monk" />
+
+            <Button
+                android:id="@+id/btnPaladin"
+                style="@style/CharacterButton"
+                android:background="@drawable/rounded_char_button"
+                android:text="Paladin" />
+
+            <Button
+                android:id="@+id/btnRanger"
+                style="@style/CharacterButton"
+                android:background="@drawable/rounded_char_button"
+                android:text="Ranger" />
+
+            <Button
+                android:id="@+id/btnRogue"
+                style="@style/CharacterButton"
+                android:background="@drawable/rounded_char_button"
+                android:text="Rogue" />
+
+            <Button
+                android:id="@+id/btnSorcerer"
+                style="@style/CharacterButton"
+                android:background="@drawable/rounded_char_button"
+                android:text="Sorcerer" />
+
+
+        </GridLayout>
 
         <Button
+            android:id="@+id/btnWarlock"
             style="@style/CharacterButton"
-            android:text="Bard" />
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="0dp"
+            android:text="Warlock" />
+    </LinearLayout>
 
-        <Button android:text="Cleric" style="@style/CharacterButton"
-            android:background="@drawable/rounded_char_button"/>
-        <Button android:text="Druid" style="@style/CharacterButton"
-            android:background="@drawable/rounded_char_button"/>
-        <Button android:text="Fighter" style="@style/CharacterButton"
-            android:background="@drawable/rounded_char_button"/>
-        <Button android:text="Monk" style="@style/CharacterButton"
-            android:background="@drawable/rounded_char_button"/>
-        <Button android:text="Paladin" style="@style/CharacterButton"
-            android:background="@drawable/rounded_char_button"/>
-        <Button android:text="Rogue" style="@style/CharacterButton"
-            android:background="@drawable/rounded_char_button"/>
-
-    </GridLayout>
-    <Button android:text="Rogue" style="@style/CharacterButton"
-        android:layout_marginStart="110dp"
-        android:background="@drawable/rounded_char_button"/>
-
-</LinearLayout>
+</ScrollView>

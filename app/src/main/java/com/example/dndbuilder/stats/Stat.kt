@@ -1,4 +1,4 @@
-package com.example.dndbuilder
+package com.example.dndbuilder.stats
 
 data class Stat(
     val name: String,

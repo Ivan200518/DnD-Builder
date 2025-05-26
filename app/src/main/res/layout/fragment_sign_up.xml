@@ -18,6 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:textColor="#403B38"
         android:text="D&amp;D Builder"
         android:textSize="30sp"
         android:textStyle="bold" />
@@ -66,7 +67,9 @@
         android:layout_height="wrap_content"
         android:background="@drawable/edittext_background"
         android:hint="Your name"
+        android:textColorHint="#403B38"
         android:layout_marginEnd = "40dp"
+        android:textColor="#403B38"
         android:layout_marginTop = "34dp"
         android:layout_marginStart ="40dp"
         android:padding="12dp" />
@@ -76,8 +79,10 @@
         android:id="@+id/passwordEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#403B38"
         android:background="@drawable/edittext_background"
         android:hint="Password"
+        android:textColorHint="#403B38"
         android:layout_marginEnd = "40dp"
         android:layout_marginStart ="40dp"
         android:layout_marginTop="20dp"
@@ -92,6 +97,8 @@
         android:hint="Confirm password"
         android:layout_marginEnd = "40dp"
         android:layout_marginStart ="40dp"
+        android:textColorHint="#403B38"
+        android:textColor="#403B38"
         android:layout_marginTop="20dp"
         android:inputType="textPassword"
         android:padding="12dp" />

@@ -1,4 +1,4 @@
-package com.example.dndbuilder
+package com.example.dndbuilder.auth.login
 
 import android.os.Bundle
 import android.view.View
@@ -6,8 +6,10 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.example.dndbuilder.utils.AppDatabase
+import com.example.dndbuilder.R
+import com.example.dndbuilder.utils.UserDao
 import com.example.dndbuilder.databinding.FragmentLoginBinding
-import com.example.dndbuilder.databinding.FragmentSignUpBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
