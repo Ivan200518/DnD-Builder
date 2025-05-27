@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     id("androidx.navigation.safeargs.kotlin")
     alias(libs.plugins.org.jetbrains.kotlin.kapt)
+    id("kotlin-parcelize")
 }
 
 android {
@@ -47,7 +48,7 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment-ktx:2.8.9")
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("androidx.core:core-splashscreen:1.0.1")
-
+    implementation("androidx.datastore:datastore-preferences:1.1.0")
     implementation(libs.androidx.core.ktx)
     implementation("androidx.room:room-runtime:$room_version")
     implementation("androidx.room:room-ktx:$room_version")

@@ -42,11 +42,43 @@
         <action
             android:id="@+id/actionMainToCharacter"
             app:destination="@id/fragmentCharacter" />
+
+        <action
+            android:id="@+id/action_fragmentMain_to_fragmentProfile"
+            app:destination="@id/fragmentProfile" />
     </fragment>
+
 
     <fragment android:id="@+id/fragmentCharacter"
         android:name="com.example.dndbuilder.fragments.FragmentCharacteristics"
         tools:layout="@layout/fragment_characterictics">
     </fragment>
+
+
+    <fragment android:id="@+id/fragmentProfile"
+        android:name="com.example.dndbuilder.fragments.FragmentProfile"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_fragmentProfile_to_fragmentMain"
+            app:destination="@id/fragmentMain" />
+        <action
+            android:id="@+id/action_fragmentProfile_to_fragmentShowCharacter"
+            app:destination="@id/fragmentShowCharacter" />
+        <action
+            android:id="@+id/action_fragmentProfile_to_fragmentLogin"
+            app:destination="@id/fragmentLogin" />
+    </fragment>
+
+    <fragment android:id="@+id/fragmentShowCharacter"
+        android:name="com.example.dndbuilder.fragments.FragmentCharacterShow"
+        tools:layout="@layout/fragment_show_character">
+        <action
+            android:id="@+id/action_fragmentShowCharacter_to_fragmentProfile"
+            app:destination="@id/fragmentProfile" />
+        <argument
+            android:name="characterItem"
+            app:argType="com.example.dndbuilder.character.CharacterItem" />
+    </fragment>
+
 
 </navigation>

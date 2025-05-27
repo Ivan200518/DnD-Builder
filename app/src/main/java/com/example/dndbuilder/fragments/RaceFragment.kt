@@ -1,8 +1,10 @@
 package com.example.dndbuilder.fragments
 
+import android.graphics.Typeface
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.dndbuilder.R
@@ -28,6 +30,8 @@ class RaceFragment : Fragment(R.layout.fragment_race) {
 
         buttons.forEach { button ->
             button.setOnClickListener {
+                selectButton(button, buttons)
+
                 val raceName = when (button.text.toString()) {
                     "Half-Orc" -> "HALF_ORC"
                     else -> button.text.toString().uppercase()
@@ -36,5 +40,29 @@ class RaceFragment : Fragment(R.layout.fragment_race) {
                 viewModel.race.value = raceName
             }
         }
+
+        viewModel.race.value?.let { savedRace ->
+            buttons.find { btn ->
+                val raceName = when (btn.text.toString()) {
+                    "Half-Orc" -> "HALF_ORC"
+                    else -> btn.text.toString().uppercase()
+                }
+                raceName == savedRace
+            }?.let { selectedButton ->
+                selectButton(selectedButton, buttons)
+            }
+        }
     }
+    private fun selectButton(selected: Button, allButtons: List<Button>) {
+        allButtons.forEach {
+            it.setBackgroundResource(R.drawable.character_button)
+            it.setTextColor(ContextCompat.getColor(requireContext(), R.color.unselected_text))
+            it.typeface = Typeface.DEFAULT
+        }
+
+        selected.setBackgroundResource(R.drawable.character_button_background_selected)
+        selected.setTextColor(ContextCompat.getColor(requireContext(), R.color.selected_text))
+        selected.typeface = Typeface.DEFAULT_BOLD
+    }
+
 }

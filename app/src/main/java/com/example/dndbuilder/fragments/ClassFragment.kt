@@ -1,8 +1,10 @@
 package com.example.dndbuilder.character
 
+import android.graphics.Typeface
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.dndbuilder.R
@@ -29,10 +31,31 @@ class ClassFragment : Fragment(R.layout.fragment_class) {
         )
 
         buttons.forEach { button ->
+
             button.setOnClickListener {
+                selectButton(button,buttons)
                 val className = button.text.toString().uppercase()
                 viewModel.characterClass.value = className
             }
         }
+        viewModel.characterClass.value?.let { savedClass ->
+            buttons.find { btn ->
+                btn.text.toString().uppercase() == savedClass
+            }?.let { selectedButton ->
+                selectButton(selectedButton, buttons)
+            }
+        }
+    }
+
+    private fun selectButton(selected: Button, allButtons: List<Button>) {
+        allButtons.forEach {
+            it.setBackgroundResource(R.drawable.character_button)
+            it.setTextColor(ContextCompat.getColor(requireContext(), R.color.unselected_text))
+            it.typeface = Typeface.DEFAULT
+        }
+
+        selected.setBackgroundResource(R.drawable.character_button_background_selected)
+        selected.setTextColor(ContextCompat.getColor(requireContext(), R.color.selected_text))
+        selected.typeface = Typeface.DEFAULT_BOLD
     }
 }

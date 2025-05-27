@@ -1,5 +1,6 @@
 package com.example.dndbuilder.auth.login
 
+import UserPreferences
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -17,13 +18,14 @@ import kotlinx.coroutines.withContext
 class FragmentLogin () : Fragment(R.layout.fragment_login) {
     private var binding : FragmentLoginBinding? = null
     private lateinit var userDao: UserDao
+    private lateinit var userPrefs: UserPreferences
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val db = AppDatabase.getInstance(requireContext())
         userDao = db.userDao()
         binding = FragmentLoginBinding.bind(view)
-
+        userPrefs = UserPreferences(requireContext())
         binding?.loginToSuccess?.setOnClickListener {
             val username = binding?.loginUsernameEditText?.text.toString().trim()
             val password = binding?.loginPasswordEditText?.text.toString().trim()
@@ -41,6 +43,7 @@ class FragmentLogin () : Fragment(R.layout.fragment_login) {
                         Toast.makeText(requireContext(), "Неверный ник или пароль", Toast.LENGTH_SHORT).show()
                     } else {
                         findNavController().navigate(FragmentLoginDirections.actionLogToMain())
+                        userPrefs.setSignedIn(true)
                         Toast.makeText(requireContext(), "Добро пожаловать, ${user.username}", Toast.LENGTH_SHORT).show()
                     }
                 }

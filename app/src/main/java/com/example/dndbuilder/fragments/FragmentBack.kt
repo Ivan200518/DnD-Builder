@@ -1,8 +1,10 @@
 package com.example.dndbuilder.fragments
 
+import android.graphics.Typeface
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.dndbuilder.R
@@ -36,9 +38,29 @@ class FragmentBack : Fragment(R.layout.fragment_background) {
 
         buttons.forEach { button ->
             button.setOnClickListener {
+                selectButton(button, buttons)
                 val backgroundName = button.text.toString().uppercase()
                 viewModel.background.value = backgroundName
             }
         }
+
+        viewModel.background.value?.let { savedBack ->
+            buttons.find{ btn ->
+                btn.text.toString().uppercase() == savedBack
+            }?.let { selectButton ->
+                selectButton(selectButton,buttons)
+            }
+        }
+    }
+    private fun selectButton(selected: Button, allButtons: List<Button>) {
+        allButtons.forEach {
+            it.setBackgroundResource(R.drawable.character_button)
+            it.setTextColor(ContextCompat.getColor(requireContext(), R.color.unselected_text))
+            it.typeface = Typeface.DEFAULT
+        }
+
+        selected.setBackgroundResource(R.drawable.character_button_background_selected)
+        selected.setTextColor(ContextCompat.getColor(requireContext(), R.color.selected_text))
+        selected.typeface = Typeface.DEFAULT_BOLD
     }
 }

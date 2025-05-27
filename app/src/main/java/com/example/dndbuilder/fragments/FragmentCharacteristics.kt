@@ -3,6 +3,7 @@ package com.example.dndbuilder.fragments
 
 import android.app.AlertDialog
 import android.graphics.Color
+import android.graphics.drawable.Icon
 import android.os.Bundle
 import android.text.InputType
 import android.util.Log
@@ -39,9 +40,7 @@ class FragmentCharacteristics :Fragment(R.layout.fragment_characterictics){
             .replace(R.id.subfragment_container, RaceFragment())
             .commit()
 
-        view.findViewById<ImageButton>(R.id.icon_race).setOnClickListener {
-            swapSubFragment(RaceFragment())
-        }
+
         setupRetrofit()
 
         binding?.button?.setOnClickListener {
@@ -73,19 +72,41 @@ class FragmentCharacteristics :Fragment(R.layout.fragment_characterictics){
                 .show()
         }
 
-        view.findViewById<ImageButton>(R.id.icon_class).setOnClickListener {
+        val icons = listOf(
+            view.findViewById<ImageButton>(R.id.icon_race),
+            view.findViewById<ImageButton>(R.id.icon_class),
+            view.findViewById<ImageButton>(R.id.icon_background),
+            view.findViewById<ImageButton>(R.id.icon_states)
+        )
+
+        icons[0].setOnClickListener {
+            setSelectedIcon(icons[0], icons)
+            swapSubFragment(RaceFragment())
+        }
+
+        icons[1].setOnClickListener {
+            setSelectedIcon(icons[1], icons)
             swapSubFragment(ClassFragment())
         }
 
-        view.findViewById<ImageButton>(R.id.icon_background).setOnClickListener {
+        icons[2].setOnClickListener {
+            setSelectedIcon(icons[2], icons)
             swapSubFragment(FragmentBack())
         }
 
-        view.findViewById<ImageButton>(R.id.icon_states).setOnClickListener {
+        icons[3].setOnClickListener {
+            setSelectedIcon(icons[3], icons)
             swapSubFragment(StatsTableFragment())
         }
 
 
+
+    }
+    private fun setSelectedIcon(icon : ImageButton, icons : List<ImageButton>) {
+        icons.forEach{
+            it.isSelected = false
+        }
+        icon.isSelected = true
     }
 
     private fun swapSubFragment(fragment: Fragment) {
@@ -96,7 +117,7 @@ class FragmentCharacteristics :Fragment(R.layout.fragment_characterictics){
     // установить свой ip в baseUrl
     private fun setupRetrofit() {
         retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.203.29:8080/")
+            .baseUrl("http://192.168.20.29:8080/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         api = retrofit.create(CharacterApi::class.java)
